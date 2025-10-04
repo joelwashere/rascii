@@ -14,7 +14,7 @@ impl Config {
     fn build(mut args: impl Iterator<Item = String>) -> Result<Config, &'static str> {
         args.next();
 
-        let mut file_path = args.next().ok_or("missing file_path")?;
+        let file_path = args.next().ok_or("missing file_path")?;
         let mut width: Option<u32> = None;
         let mut height: Option<u32> = None;
 
